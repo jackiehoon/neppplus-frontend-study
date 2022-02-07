@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #static {
+        position: static;
+      }
+      #relative-1 {
+        position: relative;
+      }
+      #relative-2 {
+        position: relative;
+        left: 100px;
+        top: -50px;
+      }
+      #fixed {
+        width: 100px;
+        height: 100px;
+        background-color: #222;
+        position: fixed;
+        right: 30px;
+        top: 30px;
+      }
+      p {
+        width: 400px;
+        height: 200px;
+        border: 1px solid #ddd;
+        background: #efefef;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="static">
+      ndum at varius vel pharetra. Magna fringilla urna porttitor rhoncus.
+      Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+      Habitasse plat
+    </p>
+    <p id="relative-1">
+      ec massa sapien faucibus. Sollicitudin aliquam ult volutpat odio facilisis
+      mauris sit amet massa vitae tortor. Vulputate mi sit amet mauris commodo
+      quis imperdiet massa tincidunt. Augue ut lectus arcu bibendum at varius
+    </p>
+    <p id="relative-2">
+      mauris commodo quis imperdiet massa tincidunt. Augue ut lectus arcu
+      bibendum at varius vel pharetra. Magna fringilla urna porttitor rhoncus.
+      Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula.
+      Habitasse platea dictumst quisque sagittis purus sit amet volutpat
+      consequat.
+    </p>
+    <p id="fixed"></p>
+  </body>
+</html>
