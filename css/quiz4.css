@@ -1,0 +1,46 @@
+#container {
+  width: 600px;
+}
+
+.header {
+  background-image: url("https://recipe1.ezmember.co.kr/cache/recipe/2021/10/28/daed301699a29ae598f71080517f976e1.jpg");
+  background-size: cover;
+  padding-top: 200px;
+  margin-bottom: 5px;
+}
+.header-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 40px;
+}
+
+.header-container > h1 {
+  color: #fff;
+}
+.header-container > p {
+  color: #ddba1d;
+  font-weight: bold;
+}
+
+.main-title {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+}
+
+h2 {
+  color: #ff0000;
+  font-size: 1.5em;
+  text-align: center;
+}
+section p {
+  font-size: 1.2em;
+  line-height: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+.accent {
+  color: #0000ff;
+}
+.smalltext {
+  font-size: 0.7em;
+}
