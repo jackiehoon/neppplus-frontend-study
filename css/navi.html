@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      .navi a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      .navi ul li {
+        float: left;
+        width: 150px;
+        padding: 10px;
+      }
+      .navi a:link,
+      .navi a:visted {
+        display: block;
+        font-size: 14px;
+        color: #000;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+      }
+      .navi a:hover,
+      .navi a:focus {
+        background-color: #222;
+        color: #fff;
+      }
+      .navi a:active {
+        background-color: #f00;
+      }
+      .clear {
+        clear: both;
+      }
+      .contents {
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .contents-wrapper {
+        width: 500px;
+        margin: 0 auto;
+      }
+      #intro:target {
+        background-color: #0069e0;
+        color: #fff;
+      }
+      #room:target {
+        background-color: #0069e0;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navi">
+      <ul>
+        <li><a href="#intro">이용 안내</a></li>
+        <li><a href="#room">객실 소개</a></li>
+        <li><a href="#reservation">예약 방법 및 요금</a></li>
+        <li><a href="./reservation.html">예약하기</a></li>
+        <div class="clear" />
+      </ul>
+    </nav>
+    <div class="contents-wrapper">
+      <div id="intro" class="contents">
+        <h2>이용 안내</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the le
+        </p>
+      </div>
+      <div id="room" class="contents">
+        <h2>객실 소개</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the le
+        </p>
+      </div>
+      <div id="reservation" class="contents">
+        <h2>예약 방법 및 요금</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the le
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

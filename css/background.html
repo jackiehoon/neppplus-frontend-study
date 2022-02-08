@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        /* background-size: cover; */
+        /* background-attachment: fixed; */
+        min-height: 100vh;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-image: url("https://t1.daumcdn.net/cfile/tistory/120DCA4A4F29073A1E");
+      }
+
+      ul {
+        list-style-type: none;
+        margin-left: -30px;
+      }
+      li {
+        background-size: 40px;
+        background-image: url("./book-icon.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        padding-left: 50px;
+        line-height: 40px;
+      }
+      .box {
+        display: inline-block;
+        border: 1px solid;
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        background: url("https://c.pxhere.com/photos/07/da/heart_shape_tree_red_outdoors_flowers_valentines_day_romantic_sky-798620.jpg!s2")
+          no-repeat left top;
+      }
+      #bg1 {
+        background-size: auto;
+      }
+      #bg2 {
+        background-size: 200px;
+      }
+      #bg3 {
+        background-size: 50%;
+        background-repeat: repeat-x;
+      }
+      #bg4 {
+        background-size: 100% 100%;
+      }
+      #bg5 {
+        background-size: contain;
+      }
+      #bg6 {
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>이지스퍼블리싱</h1>
+    <ul>
+      <li>회사소개</li>
+      <li>도서</li>
+      <li>자료실</li>
+      <li>동영상강의</li>
+    </ul>
+
+    <div class="box" id="bg1"></div>
+    <div class="box" id="bg2"></div>
+    <div class="box" id="bg3"></div>
+    <div class="box" id="bg4"></div>
+    <div class="box" id="bg5"></div>
+    <div class="box" id="bg6"></div>
+  </body>
+</html>

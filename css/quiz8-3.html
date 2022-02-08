@@ -6,11 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      * {
+        box-sizing: border-box;
+      }
       a:hover {
         color: #fff;
         background: #000;
       }
+      ul {
+        list-style: none;
+        background-image: url("http://image.auction.co.kr/itemimage/20/11/c5/2011c56756.jpg");
+      }
+      ul li {
+        float: left;
+      }
+      a {
+        border: 3px solid blue;
+        display: block;
+        padding: 10px 20px;
+        background-color: #ccc;
+        color: unset;
+        text-decoration: none;
+      }
     </style>
   </head>
-  <body></body>
+  <body>
+    <ul>
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+    </ul>
+  </body>
 </html>

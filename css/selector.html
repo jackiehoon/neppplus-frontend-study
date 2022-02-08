@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #efefef;
+      }
+      section {
+        margin: 20px;
+      }
+      p {
+        width: 600px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background: #fff;
+      }
+
+      /* 자손선택자 */
+      /* section > p {
+        color: blue;
+      } */
+      /* 자식선택자 */
+      /* section > p {
+        color: blue;
+      } */
+      h1 + p {
+        background: #222;
+        color: #fff;
+      }
+      li + li {
+        margin-top: 50px;
+      }
+      h1 ~ p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>예약 방법 & 사용 요금</h1>
+      <p>
+        아직 온라인 예약 신청이 준비되지 않았습니다.<br />
+        전화(xxx-xxxx-xxxx)로 문의하시기 바랍니다.
+      </p>
+      <p>가족실(2~4인) : 60,000원/일</p>
+      <p>도미토리(4인 공용) : 25,000원/일</p>
+    </section>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+  </body>
+</html>
