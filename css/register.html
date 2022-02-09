@@ -22,14 +22,6 @@
       legend {
         font-weight: bold;
       }
-      .last-fieldset {
-        padding: 0;
-        text-align: center;
-      }
-      .last-fieldset input {
-        border-radius: 20px;
-        padding: 5px 20px;
-      }
       #signup label {
         float: left;
         font-size: 13px;
@@ -43,10 +35,7 @@
         border: none;
       }
 
-      #signup input[type="text"],
-      #signup input[type="password"],
-      #signup input[type="tel"],
-      #signup input[type="email"] {
+      #signup input:not[type="radio"] {
         border: 1px solid #ccc;
         border-radius: 3px;
         font-size: 13px;
@@ -55,6 +44,21 @@
       }
       #signup input[required] {
         border: 1px red solid;
+      }
+
+      #signup fieldset:last-of-type {
+        border: none;
+        margin-bottom: 0;
+        padding: 0;
+        text-align: center;
+      }
+      #signup button {
+        border-radius: 20px;
+        padding: 5px 20px;
+      }
+      #signup button:hover {
+        background-color: #222;
+        color: #fff;
       }
     </style>
   </head>
@@ -95,8 +99,8 @@
             <input type="tel" />
           </div>
         </fieldset>
-        <fieldset class="last-fieldset">
-          <input type="submit" />
+        <fieldset>
+          <button>제출</button>
         </fieldset>
       </form>
     </div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 1px solid;
+        padding: 10px;
+        background: lightgray;
+        margin: 20px;
+        display: flex;
+        height: 400px;
+      }
+      #opt1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+      }
+      #opt2 {
+        flex-direction: row-reverse;
+      }
+      #opt3 {
+        flex-direction: column;
+      }
+      #opt4 {
+        flex-direction: column-reverse;
+      }
+      .box {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        margin: 10px;
+        padding: 20px;
+      }
+      #box1 {
+        height: 200px;
+      }
+      #box2 {
+        height: 300px;
+      }
+      #box3 {
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="opt1">
+      <div class="box" id="box1">1</div>
+      <div class="box" id="box2">2</div>
+      <div class="box" id="box3">3</div>
+      <div class="box" id="box4">4</div>
+    </div>
+    <div class="container" id="opt2">
+      <div class="box" id="box1">1</div>
+      <div class="box" id="box2">2</div>
+      <div class="box" id="box3">3</div>
+      <div class="box" id="box4">4</div>
+    </div>
+    <div class="container" id="opt3">
+      <div class="box" id="box1">1</div>
+      <div class="box" id="box2">2</div>
+      <div class="box" id="box3">3</div>
+      <div class="box" id="box4">4</div>
+    </div>
+    <div class="container" id="opt4">
+      <div class="box" id="box1">1</div>
+      <div class="box" id="box2">2</div>
+      <div class="box" id="box3">3</div>
+      <div class="box" id="box4">4</div>
+    </div>
+  </body>
+</html>

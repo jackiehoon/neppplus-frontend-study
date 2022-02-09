@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      #container h1 {
+        text-align: center;
+      }
+      .prod-list li {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 200px;
+      }
+      .prod-list li:hover .caption {
+        transform: translateY(-200px);
+        opacity: 1;
+      }
+      .prod-list li img {
+        width: 100%;
+        height: 100%;
+      }
+      .prod-list li .caption {
+        opacity: 0;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 200px;
+        left: 0;
+        transition: all 0.6s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>신상품 목록</h1>
+      <ul class="prod-list">
+        <li>
+          <img
+            src="https://www.fnnews.com/resource/media/image/2021/03/04/202103040901093563_l.jpg"
+          />
+          <div class="caption">
+            <h2>상품 1</h2>
+            <p>상품 1 설명 텍스트</p>
+            <p>가격 : 12,345원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="http://cdn.bizwatch.co.kr/news/photo/2021/04/30/40eafc3ec84d8beab9debbdd2974b5dc.jpg"
+          />
+          <div class="caption">
+            <h2>상품 2</h2>
+            <p>상품 2 설명 텍스트</p>
+            <p>가격 : 12,345원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://cdn.ftoday.co.kr/news/photo/201510/44298_46389_2338.jpg"
+          />
+          <div class="caption">
+            <h2>상품 3</h2>
+            <p>상품 3 설명 텍스트</p>
+            <p>가격 : 12,345원</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .contents {
+        width: 500px;
+      }
+      .contents :nth-child(3) {
+        background-color: #ffff00;
+      }
+      .contents p:nth-of-type(3) {
+        background-color: #00b900;
+      }
+
+      table {
+        border: 1px solid lightgray;
+        border-spacing: 0;
+        width: 180px;
+      }
+      table tr:nth-of-type(2n + 1) {
+        background: lightgray;
+        color: black;
+      }
+      table tr td {
+        padding: 10px 20px;
+      }
+
+      .container li.new::after {
+        content: "NEW!!";
+        font-size: x-small;
+        padding: 2px 4px;
+        margin: 0 10px;
+        border-radius: 2px;
+        background: #f00;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="contents">
+      <h2>이용안내</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolor
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolor
+      </p>
+      <h2>객실 소개</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolor
+      </p>
+      <h2>예약 방법 및 요금</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolor
+      </p>
+    </section>
+    <section>
+      <h1>웹개발</h1>
+      <table>
+        <tr>
+          <td>HTML</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>자바스크립트</td>
+        </tr>
+        <tr>
+          <td>React</td>
+        </tr>
+        <tr>
+          <td>node.js</td>
+        </tr>
+      </table>
+    </section>
+    <section class="container">
+      <h1>제품 목록</h1>
+      <ul>
+        <li class="new">제품 A</li>
+        <li>제품 B</li>
+        <li>제품 C</li>
+        <li class="new">제품 D</li>
+      </ul>
+    </section>
+  </body>
+</html>
