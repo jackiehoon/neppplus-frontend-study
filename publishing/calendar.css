@@ -1,0 +1,55 @@
+table {
+  width: 600px;
+  border-collapse: collapse;
+}
+th {
+  background: green;
+  color: #fff;
+}
+th,
+td {
+  border: 1px solid #000;
+}
+td {
+  height: 80px;
+}
+.gray {
+  color: gray;
+}
+tr :first-child:not(.gray) {
+  color: red;
+}
+tr :last-child:not(.gray) {
+  color: blue;
+}
+
+.grid-calendar {
+  width: 600px;
+}
+.grid-calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.grid-calendar .week {
+  background: green;
+  color: #fff;
+  text-align: center;
+}
+.grid-calendar li {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+}
+.grid-calendar .day-list li {
+  height: 80px;
+}
+.grid-calendar .day-list li:nth-child(7n + 1):not(.gray) {
+  color: red;
+}
+.grid-calendar .day-list li:nth-child(7n):not(.gray) {
+  color: blue;
+}

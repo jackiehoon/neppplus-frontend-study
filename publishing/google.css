@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#header {
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+#header ul {
+  display: flex;
+}
+#header .left {
+  margin-left: 15px;
+}
+#header .left li {
+  color: #202124;
+  padding: 5px;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+}
+#header .right li {
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.img-menu-wrapper,
+.img-profile-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.img-menu-wrapper:hover,
+.img-profile-wrapper:hover {
+  background: #ddd;
+}
+.img-menu {
+  width: 16px;
+  height: 16px;
+}
+.img-profile {
+  width: 32px;
+  height: 32px;
+}
+
+#footer {
+  font-size: 15px;
+  color: #70757a;
+  background: #f2f2f2;
+}
+#footer .bar1 {
+  padding: 15px 30px;
+  border-bottom: 1px solid #dadce0;
+}
+#footer .bar2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+#footer .bar2 ul {
+  display: flex;
+}
+#footer .bar2 ul li {
+  padding: 15px;
+}
+#footer {
+}
