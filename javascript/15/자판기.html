@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="insertCoin(100);">100원</button>
+    <button>500원</button>
+    <button>1000원</button>
+    <button>5000원</button>
+
+    <p>현재금액 : <span id="total-money">0</span>원</p>
+    <p></p>
+
+    <script>
+      // 1. 버튼리스트 만들기
+      // 2. 버튼을 누르면 insertCoin함수를 실행
+      // 3. 버튼마다 증가하는 돈이 다름
+
+      let totalMoney = 0;
+      const insertCoin = (money) => {
+        // 4. money만큼 totalMoney를 증가시키고
+        // 5. totalMoney를 console.log;
+      };
+      const buy = (money) => {
+        // 가격이 소지금액보다 크면 alert&구매 불가
+        // 4. money만큼 totalMoney를 감소시키고
+        // 5. totalMoney를 console.log;
+      };
+
+      document.queryCommandIndetermSe("#AESR").onclick = function () {
+        insertCoin(100);
+      };
+    </script>
+  </body>
+</html>

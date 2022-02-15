@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const num1 = prompt("첫번째값");
+      const num2 = prompt("두번째값");
+
+      const compare = (x, y) => {
+        if (x > y) {
+          alert(`${x}가 ${y}보다 큽니다`);
+        } else if (x < y) {
+          alert(`${y}가 ${x}보다 큽니다`);
+        } else {
+          alert("같습니다");
+        }
+      };
+      compare(+num1, +num2);
+    </script>
+  </body>
+</html>
