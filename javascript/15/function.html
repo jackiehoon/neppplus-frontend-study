@@ -15,7 +15,11 @@
         return sum;
       }
 
-      const sum = addNumber(3);
+      console.log(y);
+      for (let i = 0; i < 5; i++) {}
+      console.log(i);
+
+      const result = addNumber(3);
       addNumber(13, 25);
 
       //   addNumber();
@@ -37,6 +41,38 @@
 
       let i = "abc";
       i = 0;
+
+      minusNumber(3, 4);
+
+      //함수표현식
+      const minusNumber = function (a, b) {
+        alert(a, b);
+      };
+      const minusNumber = (a, b) => {
+        alert(a, b);
+      };
+      const minusNumber = (a, b) => alert(a, b);
+
+      const hi = () => {
+        return "hi";
+      };
+      const hi = () => "hi";
+
+      () => {};
+
+      const hello = (func) => {
+        func("hi");
+      };
+      hello((m) => alert(m));
+
+      ((message) => {
+        alert(message);
+      })("hi");
+
+      // 함수 선언식
+      function minusNumber(a, b) {
+        alert(a, b);
+      }
     </script>
   </body>
 </html>
