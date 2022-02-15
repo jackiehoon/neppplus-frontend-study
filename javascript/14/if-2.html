@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3의배수,5의배수 판독</title>
+  </head>
+  <body>
+    <script>
+      const answer = prompt("숫자를 입력하세요");
+      const number = +answer;
+
+      if (number === 0) {
+        alert("아무 것도 아닙니다.");
+      } else if (number % 3 === 0 && number % 5 === 0) {
+        alert("3과 5의 배수 입니다");
+      } else if (number % 3 === 0) {
+        alert("3의 배수 입니다.");
+      } else if (number % 5 === 0) {
+        alert("5의 배수 입니다");
+      } else {
+        alert("아무 것도 아닙니다.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const skillName = prompt("작동할 스킬 이름을 입력하세요");
+
+      switch (skillName) {
+        case "매직클로":
+          alert("매직클로로 데미지를 10 입혔습니다.");
+          break;
+        case "썬더볼트":
+          alert("썬더볼트로 데미지를 20 입혔습니다.");
+          break;
+        case "고급힐":
+          alert("상태이상이 회복되었습니다.");
+        case "초급힐":
+          alert("체력이 회복되었습니다.");
+          break;
+        default:
+          alert("그 스킬은 배우지 않았습니다.");
+      }
+    </script>
+  </body>
+</html>
