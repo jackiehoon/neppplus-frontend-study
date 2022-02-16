@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      const numbers = ["one", "two", "three", "four", "five"];
+      for (let i = 0; i < numbers.length; i++) {
+        document.write(`<p>${numbers[i]}</p>`);
+      }
+      const nums = [1, 2, 3];
+      const chars = ["a", "b", "c", "d"];
+
+      // 배열끼리 합치는 concat() 메서드
+      //   const numsChars = nums.concat(chars);
+      //   const charsNums = chars.concat(nums);
+      const numsChars = [...nums, ...chars];
+      const charsNums = [...chars, ...nums];
+      document.write(
+        `nums에 chars 합치면: ${numsChars} <br/> chars에 nums 합치면 ${charsNums}`
+      );
+      document.write("<br/>");
+
+      // 배열 안의 요소끼리 합치는 join() 메서드
+      document.write("<br/>");
+      const string1 = nums.join("");
+      document.write("구분자 없이: ", string1);
+      document.write("<br/>");
+      const string2 = chars.join("/");
+      document.write("'/' 구분자 지정: ", string2);
+      document.write("<br/>");
+
+      // 문자를 배열로 만드는 split() 메서드
+      const arr = string1.split();
+      document.write(arr);
+      document.write("<br/>");
+
+      // 새로운 요소를 추가하는 push(), unshift() 메서드
+      document.write("<br/>");
+      const ret1 = nums.push(4, 5);
+      document.write(`length: ${ret1} | 배열: ${nums}`);
+      document.write("<br/>");
+      const ret2 = nums.unshift(0);
+      document.write(`length: ${ret2} | 배열: ${nums}`);
+      document.write("<br/>");
+
+      // 배열에서 요소를 꺼내는 pop(), shift()메서드
+      document.write("<br/>");
+      const popped1 = chars.pop();
+      document.write(`꺼낸 요소: ${popped1} | 배열: ${chars}`);
+      document.write("<br/>");
+      const popped2 = chars.shift();
+      document.write(`꺼낸 요소: ${popped2} | 배열: ${chars}`);
+      document.write("<br/>");
+
+      // 원하는 위치에 요소를 추가,삭제하는 splice() 메서드
+      // 1. 인수가 1개인 경우
+      document.write("<br/>");
+      const newNumbers = numbers.splice(2);
+      document.write(`반환된 배열: ${newNumbers}<br/>`);
+      document.write(`변경된 배열: ${numbers}`);
+      document.write("<br/>");
+
+      // 2. 인수가 2개인 경우
+      document.write("<br/>");
+      const study = ["html", "css", "web", "jquery"];
+      const newStudy = study.splice(2, 1);
+      document.write(`반환된 배열 : ${newStudy} <br/>`);
+      document.write(`변경된 배열 : ${study}`);
+      document.write("<br/>");
+
+      // 3. 인수가 3개 이상인 경우
+      document.write("<br/>");
+      const newStudy2 = study.splice(2, 1, "js", "react");
+      document.write(`반환된 배열: ${newStudy2}<br/>`);
+      document.write(`변경된 배열: ${study}`);
+      document.write("<br/>");
+
+      // 기존 배열을 바꾸지 않으면서 요소를 꺼내는 slice() 메서드
+      // 1. 인수가 1개일 경우
+      document.write("<br/>");
+      const colors = ["red", "green", "blue", "white", "black"];
+      const colors2 = colors.slice(2);
+      document.write(colors);
+      document.write("<br/>");
+      document.write(colors2);
+      document.write("<br/>");
+      // 2. 인수가 2개일 경우
+      const colors3 = colors.slice(2, 4);
+      document.write(colors3);
+      document.write("<br/>");
+    </script>
+  </body>
+</html>
