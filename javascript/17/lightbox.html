@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #lightbox {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #lightboxImage {
+        border: 5px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <ul>
+        <li><img class="pic" /></li>
+      </ul>
+    </div>
+    <div id="lightbox">
+      <img
+        src="https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png"
+        id="lightboxImage"
+      />
+    </div>
+  </body>
+</html>

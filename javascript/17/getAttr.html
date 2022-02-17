@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .img-thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="prod-pic">
+      <img
+        src="https://ww.namu.la/s/b39cd616b1d08bd30a1c70a540f5be19bd03c64df162d0e6030ec9611196a1b3afff3af84e1d56c65ff7ad6a686578a893aedb785886957028b63d16b1dcc9fdb752e37475c46b81f4d55dbad177e32daeb9494c53e09cd1e50dde8df8665b4b"
+        alt="에디오피아 게뎁"
+        id="cup"
+        width="200"
+        height="200"
+        onclick="displaySrc()"
+      />
+    </div>
+    <div class="thumbnail-list">
+      <img
+        class="img-thumbnail"
+        src="https://ww.namu.la/s/b39cd616b1d08bd30a1c70a540f5be19bd03c64df162d0e6030ec9611196a1b3afff3af84e1d56c65ff7ad6a686578a893aedb785886957028b63d16b1dcc9fdb752e37475c46b81f4d55dbad177e32daeb9494c53e09cd1e50dde8df8665b4b"
+      />
+      <img
+        class="img-thumbnail"
+        src="https://img.huffingtonpost.com/asset/5ffb9c35260000145e0c6a8e.jpeg?ops=scalefit_720_noupscale"
+      />
+      <img
+        class="img-thumbnail"
+        src="https://www.sisajournal.com/news/photo/202105/217436_125403_558.jpg"
+      />
+    </div>
+
+    <script>
+      const cup = document.querySelector("#cup");
+
+      const thumbnailList = document.querySelectorAll(".img-thumbnail");
+      for (let i = 0; i < thumbnailList.length; i++) {
+        thumbnailList[i].onclick = changePic;
+      }
+
+      function displaySrc() {
+        alert("이미지 소스: " + cup.getAttribute("src"));
+      }
+      function changePic() {
+        const newPic = this.src;
+        cup.setAttribute("src", newPic);
+      }
+
+      // 비구조화할당
+      cup.onclick = function ({ type, pageX, pageY }) {
+        console.log(`이벤트 유형: ${type}`);
+        console.log(`이벤트 발생 위치: ${pageX}, ${pageY}`);
+        console.log(event);
+      };
+    </script>
+  </body>
+</html>

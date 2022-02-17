@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="addImg()">더보기</button>
+    <button onclick="removeImg()">삭제</button>
+    <div id="info"></div>
+    <script>
+      const addP = () => {
+        const newP = document.createElement("p");
+        // const txtNode = document.createTextNode(
+        //   "DOM은 document object model의 줄임말입니다."
+        // );
+        // newP.appendChild(txtNode);
+        newP.innerText = "DOM은 document object model의 줄임말입니다.";
+
+        document.getElementById("info").appendChild(newP);
+      };
+
+      const addImg = () => {
+        const newImg = document.createElement("img");
+        newImg.src =
+          "https://post-phinf.pstatic.net/MjAyMDAyMjlfMjY4/MDAxNTgyOTU0Nzg3MjQ4.PBMFV4WrSJmeSUJ56c4C7Vkz_SsQlJ1SByKU18kkJh0g.T7mQnadCWVtEZ448AGk_9kG1HFBAzdztXZcBjvSbduwg.JPEG/%EA%B3%A0%EC%96%91%EC%9D%B4_%EB%82%98%EC%9D%B41.jpg?type=w1200";
+
+        document.getElementById("info").appendChild(newImg);
+      };
+
+      const removeImg = () => {
+        document.removeChild();
+      };
+    </script>
+  </body>
+</html>
