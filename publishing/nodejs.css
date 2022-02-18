@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  background-color: #333;
+  text-align: center;
+  position: relative;
+}
+header .img-logo {
+  width: 122px;
+  margin-top: 10px;
+}
+header .link-list {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+header .link-list li {
+  padding: 0px 6px;
+}
+header .link-list li + li {
+  border-left: 1px solid #ccc;
+}
+header .link-list a {
+  color: #ccc;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 14px;
+}
+header .btn-list {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+header .btn-translate {
+  padding: 12px;
+}

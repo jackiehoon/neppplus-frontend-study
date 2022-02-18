@@ -7,8 +7,30 @@
     <title>Document</title>
   </head>
   <body>
-    <input />
-    <input />
-    <button>만들기</button>
+    <input id="input-row" />
+    <input id="input-column" />
+    <button id="btn-create">만들기</button>
+    <table id="table"></table>
+
+    <script>
+      // document.getElementById("btn-create")
+      const $btnCreate = document.querySelector("#btn-create");
+
+      $btnCreate.addEventListener("click", () => {
+        const row = document.querySelector("#input-row").value;
+        const column = document.querySelector("#input-column").value;
+        const table = document.querySelector("#table");
+        table.innerHTML = "";
+        for (let i = 0; i < row; i++) {
+          const tr = document.createElement("tr");
+          for (let j = 0; j < column; j++) {
+            const td = document.createElement("td");
+            td.innerText = `${i}, ${j}`;
+            tr.appendChild(td);
+          }
+          table.appendChild(tr);
+        }
+      });
+    </script>
   </body>
 </html>
