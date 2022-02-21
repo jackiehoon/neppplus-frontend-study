@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="time"></h2>
+    <script>
+      const $time = document.querySelector("#time");
+
+      setInterval(() => {
+        const time = new Date();
+        let hour = time.getHours();
+        let minute = time.getMinutes();
+        let second = time.getSeconds();
+
+        if (hour < 10) hour = `0${hour}`;
+        if (minute < 10) minute = "0" + minute;
+        if (second < 10) second = "0" + second;
+
+        $time.innerText = `${hour}:${minute}:${second}`;
+      }, 1000);
+    </script>
+  </body>
+</html>
