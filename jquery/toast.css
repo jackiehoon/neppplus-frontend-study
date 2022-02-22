@@ -1,0 +1,47 @@
+.toast {
+  width: 350px;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  border-radius: 4px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+.toast.active {
+  display: block;
+}
+.toast-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+.toast-title {
+  flex: 1;
+  margin: 0 10px;
+  color: #6c757d;
+  font-weight: bold;
+  font-size: 14px;
+}
+.toast-datetime {
+  font-size: 12px;
+}
+.square {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #0d6efd;
+}
+.btn-close {
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+}
+.toast-body {
+  padding: 12px;
+  font-size: 14px;
+}

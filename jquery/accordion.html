@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./accordion.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <ul class="accordion">
+      <li class="accordion-item">
+        <div class="accordion-header">
+          Accordion Item #1
+          <button class="btn-arrow"></button>
+        </div>
+        <div class="accordion-body">
+          This is the third item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          wel
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header">
+          Accordion Item #2 <button class="btn-arrow"></button>
+        </div>
+        <div class="accordion-body">
+          This is the third item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          wel
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header">
+          Accordion Item #31 <button class="btn-arrow"></button>
+        </div>
+        <div class="accordion-body">
+          This is the third item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          wel
+        </div>
+      </li>
+      <li class="accordion-item">
+        <div class="accordion-header">
+          Accordion Item #4 <button class="btn-arrow"></button>
+        </div>
+        <div class="accordion-body">
+          This is the third item's accordion body. It is hidden by default,
+          until the collapse plugin adds the appropriate classes that we use to
+          style each element. These classes control the overall appearance, as
+          wel
+        </div>
+      </li>
+    </ul>
+
+    <script>
+      $(".accordion-header").click(function () {
+        const $item = $(this).closest(".accordion-item");
+        // $(this).siblings(".accordion-body").slideToggle();
+        const isActive = $item.hasClass("active");
+        // 1. 모든 item을 닫는다
+        // 2. 원래 닫혀있던 item만 active 클래스를 붙인다.
+        $(".accordion-item").removeClass("active");
+        if (!isActive) $item.addClass("active");
+      });
+    </script>
+  </body>
+</html>

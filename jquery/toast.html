@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./button.css" />
+    <link rel="stylesheet" href="./toast.css" />
+  </head>
+  <body>
+    <button class="btn-blue btn-toast-1">토스트1 열기</button>
+    <button class="btn-blue btn-toast-2">토스트2 열기</button>
+
+    <div class="toast toast-1">
+      <div class="toast-header">
+        <div class="square"></div>
+        <span class="toast-title">토스트1</span>
+        <span class="toast-datetime">11 mins ago</span>
+        <button class="btn-close"></button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+    </div>
+
+    <div class="toast toast-2">
+      <div class="toast-header">
+        <div class="square"></div>
+        <span class="toast-title">토스트2</span>
+        <span class="toast-datetime">11 mins ago</span>
+        <button class="btn-close"></button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //   const $btnToast = document.querySelector(".btn-toast");
+      //   $btnToast.addEventListener("click", () => {
+      //     const $toast = document.querySelector(".toast");
+      //     $toast.classList.add("active");
+      //   });
+
+      $(".btn-toast-1").on("click", () => {
+        $(".toast-1").addClass("active");
+
+        // 누른 후 3초뒤에 토스트 사라지기
+        setTimeout(() => {
+          $(".toast-1").removeClass("active");
+        }, 3000);
+      });
+
+      $(".btn-toast-2").on("click", () => {
+        $(".toast-2").addClass("active");
+        setTimeout(() => {
+          $(".toast-2").removeClass("active");
+        }, 3000);
+      });
+
+      // 닫힘 버튼을 눌렀을때 그 element의 부모중에서
+      // class가 "toast"인 애를 찾아서 걔의 active클래스를 제거
+      $(".btn-close").click(function () {
+        $(this).closest(".toast").removeClass("active");
+      });
+      //   $(".btn-close").click((e) => {
+      //     $(e.currentTarget).closest(".toast").removeClass("active");
+      //   });
+    </script>
+  </body>
+</html>
