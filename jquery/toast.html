@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="./toast.css" />
   </head>
   <body>
-    <button class="btn-blue btn-toast-1">토스트1 열기</button>
-    <button class="btn-blue btn-toast-2">토스트2 열기</button>
+    <button class="btn-blue btn-toast" data-id="1">토스트1 열기</button>
+    <button class="btn-blue btn-toast" data-id="2">토스트2 열기</button>
 
-    <div class="toast toast-1">
+    <div class="toast" data-id="1">
       <div class="toast-header">
         <div class="square"></div>
         <span class="toast-title">토스트1</span>
@@ -23,7 +23,7 @@
       <div class="toast-body">Hello, world! This is a toast message.</div>
     </div>
 
-    <div class="toast toast-2">
+    <div class="toast" data-id="2">
       <div class="toast-header">
         <div class="square"></div>
         <span class="toast-title">토스트2</span>
@@ -45,19 +45,13 @@
       //     $toast.classList.add("active");
       //   });
 
-      $(".btn-toast-1").on("click", () => {
-        $(".toast-1").addClass("active");
+      $(".btn-toast").on("click", function () {
+        const id = $(this).data("id");
+        $(`.toast[data-id=${id}]`).addClass("active");
 
         // 누른 후 3초뒤에 토스트 사라지기
         setTimeout(() => {
-          $(".toast-1").removeClass("active");
-        }, 3000);
-      });
-
-      $(".btn-toast-2").on("click", () => {
-        $(".toast-2").addClass("active");
-        setTimeout(() => {
-          $(".toast-2").removeClass("active");
+          $(`.toast[data-id=${id}]`).removeClass("active");
         }, 3000);
       });
 

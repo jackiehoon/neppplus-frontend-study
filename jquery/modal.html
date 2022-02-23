@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./button.css" />
+    <link rel="stylesheet" href="./modal.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button class="btn-blue btn-modal">modal</button>
+    <div class="backdrop"></div>
+    <div class="modal">
+      <div class="modal-header">
+        Modal title
+        <button class="btn-close btn-modal-close"></button>
+      </div>
+      <div class="modal-body">Woohoo, you're reading this text in a modal!</div>
+      <div class="modal-footer">
+        <button class="btn-gray btn-modal-close">Close</button>
+        <button class="btn-blue">Save changes</button>
+      </div>
+    </div>
+    <script>
+      // 1. 버튼 누르면 모달,backdrop 나오기
+      // 2. backdrop, x버튼,close버튼 누르면
+      //   모달,backdrop 사라지기
+
+      $(".btn-modal").click(() => {
+        $(".backdrop").show();
+        $(".modal").show();
+      });
+
+      $(".backdrop, .btn-modal-close").click(() => {
+        $(".backdrop").hide();
+        $(".modal").hide();
+      });
+    </script>
+  </body>
+</html>

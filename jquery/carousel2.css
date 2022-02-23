@@ -1,0 +1,41 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: 600px;
+}
+.carousel-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: transform 1s;
+}
+.carousel-image {
+  width: 800px;
+  height: 600px;
+}
+
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.btn-prev {
+  left: 20px;
+}
+.btn-next {
+  right: 20px;
+}
+
+.button-list {
+  position: absolute;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
