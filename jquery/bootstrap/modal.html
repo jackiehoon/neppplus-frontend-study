@@ -15,6 +15,32 @@
   </head>
   <body>
     <button class="btn-blue btn-modal">modal</button>
+    <ul class="carousel-list">
+      <li class="carousel-item active">
+        <img
+          src="https://cdn.pixabay.com/photo/2019/08/01/12/36/illustration-4377408_960_720.png"
+          class="carousel-image"
+        />
+      </li>
+      <li class="carousel-item">
+        <img
+          src="https://www.sjpost.co.kr/news/photo/202007/53199_48342_4214.jpg"
+          class="carousel-image"
+        />
+      </li>
+      <li class="carousel-item">
+        <img
+          src="https://og-data.s3.amazonaws.com/media/artworks/half/A0880/A0880-0016.jpg"
+          class="carousel-image"
+        />
+      </li>
+      <li class="carousel-item">
+        <img
+          src="https://t1.daumcdn.net/cfile/tistory/9946A4505F5817A60D"
+          class="carousel-image"
+        />
+      </li>
+    </ul>
     <div class="backdrop"></div>
     <div class="modal">
       <div class="modal-header">
@@ -27,6 +53,7 @@
         <button class="btn-blue">Save changes</button>
       </div>
     </div>
+
     <script>
       // 1. 버튼 누르면 모달,backdrop 나오기
       // 2. backdrop, x버튼,close버튼 누르면
@@ -35,11 +62,14 @@
       $(".btn-modal").click(() => {
         $(".backdrop").show();
         $(".modal").show();
+
+        $("body").css("overflow", "hidden");
       });
 
       $(".backdrop, .btn-modal-close").click(() => {
         $(".backdrop").hide();
         $(".modal").hide();
+        $("body").css("overflow", "");
       });
     </script>
   </body>

@@ -1,0 +1,18 @@
+.wrapper {
+  padding: 60px 0;
+  margin: 0 auto;
+  width: 440px;
+}
+.wrapper .btn-big {
+  margin-top: 20px;
+}
+.wrapper-title {
+  text-align: center;
+}
+.input-wrapper {
+  margin-bottom: 20px;
+}
+.input-wrapper label {
+  display: inline-block;
+  margin-bottom: 4px;
+}

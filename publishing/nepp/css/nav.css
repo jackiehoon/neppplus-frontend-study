@@ -1,0 +1,15 @@
+#header {
+  background: #000;
+  height: 70px;
+}
+
+#header .container {
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+#header .img-logo {
+  vertical-align: bottom;
+}

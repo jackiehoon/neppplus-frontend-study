@@ -42,3 +42,6 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.button-list button.active {
+  border-radius: 50%;
+}
