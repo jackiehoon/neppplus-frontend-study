@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./todo.css" />
+    <link rel="stylesheet" href="/stylesheets/todo.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -14,36 +14,36 @@
   </head>
   <body>
     <div>
-      <h1>To Do List</h1>
+      <h1><%= name %>님의 To Do List</h1>
       <header>
         <form id="form">
-          <input id="input-text" />
+          <input
+            id="input-name"
+            type="hidden"
+            name="name"
+            value="<%= name %>"
+          />
+          <input id="input-text" name="text" />
           <button>입력</button>
           <button type="button" id="btn-delete-all">전체 삭제</button>
         </form>
       </header>
       <main>
         <ul class="todo-list">
+          <% for(let i = 0; i < todoList.length; i++){ %>
           <li class="todo-item">
             <label>
               <input class="input-check" type="checkbox" />
-              <span class="todo-text">장보기</span>
+              <span class="todo-text"> <%=todoList[i].text%> </span>
             </label>
-            <button class="btn-edit">수정</button>
+            <button class="btn-edit" data-id="<%=todoList[i].id%>">수정</button>
             <button class="btn-delete">삭제</button>
           </li>
-          <li class="todo-item">
-            <label>
-              <input class="input-check" type="checkbox" />
-              <span class="todo-text">청소하기</span>
-            </label>
-            <button class="btn-edit">수정</button>
-            <button class="btn-delete">삭제</button>
-          </li>
+          <%}%>
         </ul>
       </main>
     </div>
 
-    <script src="./todo.js"></script>
+    <script src="/javascripts/todo.js"></script>
   </body>
 </html>

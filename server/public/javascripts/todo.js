@@ -6,16 +6,30 @@ $("#form").on("submit", (e) => {
   const value = $("#input-text").val();
   if (value === "") return;
 
+  const name = $("#input-name").val();
+
+  $.ajax({
+    url: "/todo",
+    method: "POST",
+    data: {
+      text: value,
+      name: name,
+    },
+    success: (result) => {
+      console.log(result);
+    },
+  });
+
   $(".todo-list").append(`
-    <li class="todo-item">
-      <label>
-        <input type="checkbox" class="input-check" />
-        <span class="todo-text">${value}</span>
-      </label>
-      <button class="btn-edit">수정</button>
-      <button class="btn-delete">삭제</button>
-    </li>
-`);
+      <li class="todo-item">
+        <label>
+          <input type="checkbox" class="input-check" />
+          <span class="todo-text">${value}</span>
+        </label>
+        <button class="btn-edit">수정</button>
+        <button class="btn-delete">삭제</button>
+      </li>
+  `);
 
   $("#input-text").val("");
   $("#input-text").focus();
@@ -50,5 +64,18 @@ $(document).on("change", ".input-check", function () {
 
 $(document).on("click", ".btn-edit", function () {
   const text = prompt("수정할 내용을 입력하세요.");
+  const id = $(this).data("id");
+
+  $.ajax({
+    url: `/todo/${id}`,
+    method: "PUT",
+    data: {
+      text: text,
+    },
+    success: (result) => {
+      console.log(result);
+    },
+  });
+
   $(this).parent().find(".todo-text").text(text);
 });
