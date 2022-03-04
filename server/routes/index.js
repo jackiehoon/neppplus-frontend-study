@@ -8,19 +8,19 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/todo", function (req, res, next) {
-  const name = req.query.name;
+  const { name } = req.query;
 
   const query = `SELECT * FROM todo WHERE name="${name}";`;
   conn.query(query, (error, results) => {
     if (error) throw error;
 
-    res.render("todo", { name: name, todoList: results });
+    res.render("todo", { name, todoList: results });
   });
 });
 
 router.post("/todo", function (req, res, next) {
-  const name = req.body.name;
-  const text = req.body.text;
+  const { name, text } = req.body;
+
   const query = `
     INSERT INTO todo(name, text) VALUES("${name}", "${text}");
   `;
@@ -33,8 +33,8 @@ router.post("/todo", function (req, res, next) {
 
 // dynamic route
 router.put("/todo/:id", function (req, res, next) {
-  const id = req.params.id;
-  const text = req.body.text;
+  const { id } = req.params;
+  const { text } = req.body;
 
   const query = `
     UPDATE todo SET text = "${text}" WHERE id = ${id};
@@ -46,7 +46,7 @@ router.put("/todo/:id", function (req, res, next) {
 });
 
 router.delete("/todo", (req, res) => {
-  const name = req.body.name;
+  const { name } = req.body;
   const query = `
     DELETE FROM todo WHERE name="${name}";
   `;
@@ -57,7 +57,7 @@ router.delete("/todo", (req, res) => {
 });
 
 router.delete("/todo/:id", (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   const query = `
     DELETE FROM todo WHERE id=${id};
   `;
@@ -68,8 +68,8 @@ router.delete("/todo/:id", (req, res) => {
 });
 
 router.patch("/todo/all", (req, res) => {
-  const name = req.body.name;
-  const isDone = req.body.isDone;
+  const { name, isDone } = req.body;
+
   const query = `
     UPDATE todo SET isDone=${isDone} WHERE name='${name}';
   `;
@@ -80,8 +80,9 @@ router.patch("/todo/all", (req, res) => {
 });
 
 router.patch("/todo/:id", (req, res) => {
-  const id = req.params.id;
-  const isDone = req.body.isDone;
+  const { id } = req.params;
+  const { isDone } = req.body;
+
   const query = `
     UPDATE todo SET isDone = ${isDone} WHERE id=${id};
   `;
