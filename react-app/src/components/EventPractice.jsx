@@ -20,6 +20,7 @@ const EventPractice = () => {
     const value = e.target.value;
 
     const newForm = { ...form, [name]: value };
+
     setForm(newForm);
   };
 
