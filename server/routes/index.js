@@ -27,7 +27,7 @@ router.post("/todo", function (req, res, next) {
   conn.query(query, (error, results) => {
     if (error) throw error;
     console.log(results);
-    res.send("success");
+    res.send({ id: results.insertId });
   });
 });
 
@@ -38,6 +38,52 @@ router.put("/todo/:id", function (req, res, next) {
 
   const query = `
     UPDATE todo SET text = "${text}" WHERE id = ${id};
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.delete("/todo", (req, res) => {
+  const name = req.body.name;
+  const query = `
+    DELETE FROM todo WHERE name="${name}";
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.delete("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  const query = `
+    DELETE FROM todo WHERE id=${id};
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.patch("/todo/all", (req, res) => {
+  const name = req.body.name;
+  const isDone = req.body.isDone;
+  const query = `
+    UPDATE todo SET isDone=${isDone} WHERE name='${name}';
+  `;
+  conn.query(query, (error, results) => {
+    if (error) throw error;
+    res.send("success");
+  });
+});
+
+router.patch("/todo/:id", (req, res) => {
+  const id = req.params.id;
+  const isDone = req.body.isDone;
+  const query = `
+    UPDATE todo SET isDone = ${isDone} WHERE id=${id};
   `;
   conn.query(query, (error, results) => {
     if (error) throw error;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("1");
+      setTimeout(() => {
+        console.log("2");
+      }, 0);
+      console.log("3");
+
+      // 자바스크립트는 싱글스레드. (한번에 한가지 일만 한다.)
+      // 비동기함수(setTimeout, ajax, query)들은 따로 처리된다.
+    </script>
+  </body>
+</html>
