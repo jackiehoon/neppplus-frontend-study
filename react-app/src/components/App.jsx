@@ -1,5 +1,5 @@
 function App() {
-  const name = "리액트";
+  const name = "0";
   const style = {
     backgroundColor: "black",
     color: "aqua",
@@ -18,7 +18,7 @@ function App() {
       {name === "리액트" && <h1>리액트입니다.</h1>}
       {name || <h1>값이 유효하지 않습니다.</h1>}
 
-      <div style={style} className="">
+      <div style={style} className="" id="idtest">
         {name}
       </div>
       <input />

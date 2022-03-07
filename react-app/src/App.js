@@ -1,10 +1,16 @@
+import { useState } from "react";
 import "./App.css";
-import IterationSample from "./components/IterationSample";
+import Info from "./components/Info2";
+import Counter3 from "./components/Counter3";
 
 function App() {
+  const [isShow, setIsShow] = useState(false);
   return (
     <>
-      <IterationSample />
+      <button onClick={() => setIsShow(true)}>나오기</button>
+      <button onClick={() => setIsShow(false)}>숨기기</button>
+      {isShow && <Info />}
+      <Counter3 />
     </>
   );
 }

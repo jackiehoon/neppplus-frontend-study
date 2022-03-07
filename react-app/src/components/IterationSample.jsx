@@ -19,7 +19,7 @@ const IterationSample = () => {
   };
 
   const handleClick = () => {
-    const newNames = [...names, { id: nextId, text: text }];
+    const newNames = [...names, { id: nextId, text }];
     setNames(newNames);
     setText("");
     setNextId(nextId + 1);
