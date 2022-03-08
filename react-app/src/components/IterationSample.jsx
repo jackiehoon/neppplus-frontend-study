@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const IterationSample = () => {
   // 버튼을 누르면 input에 입력된 값 alert
@@ -12,17 +12,18 @@ const IterationSample = () => {
     { id: 4, text: "바람" },
   ]);
   const [text, setText] = useState("");
-  const [nextId, setNextId] = useState(5);
+  // const [nextId, setNextId] = useState(5);
+  const nextId = useRef(5);
 
   const handleChange = (e) => {
     setText(e.target.value);
   };
 
   const handleClick = () => {
-    const newNames = [...names, { id: nextId, text }];
+    const newNames = [...names, { id: nextId.current, text }];
     setNames(newNames);
     setText("");
-    setNextId(nextId + 1);
+    nextId.current = nextId.current + 1;
   };
 
   const handleDelete = (id) => {
