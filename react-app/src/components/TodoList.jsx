@@ -26,6 +26,9 @@ const TodoList = () => {
   const handleEdit = (id) => {
     const newText = prompt("입력하세요");
     const newTodoList = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { id: 1, text: "!!" };
+      }
       return todo;
     });
     setTodoList(newTodoList);
