@@ -12,28 +12,45 @@ const TodoList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTodoList = [...todoList, { id: nextId.current, text: text }];
+    const newTodoList = [
+      ...todoList,
+      { id: nextId.current, text, isDone: true },
+    ];
     setTodoList(newTodoList);
     setText("");
     nextId.current++;
   };
 
-  const handleDelete = (id) => {
-    const newTodoList = todoList.filter((todo) => todo.id !== id);
+  const handleDelete = (deleteId) => {
+    const newTodoList = todoList.filter(({ id }) => id !== deleteId);
     setTodoList(newTodoList);
   };
 
   const handleEdit = (id) => {
     const newText = prompt("입력하세요");
-    const newTodoList = todoList.map((todo) => {
-      if (todo.id === id) {
-        return { id: 1, text: "!!" };
-      }
-      return todo;
-    });
+    const newTodoList = todoList.map((todo) =>
+      todo.id === id ? { ...todo, text: newText } : todo
+    );
     setTodoList(newTodoList);
   };
 
+  const handleChecked = (id, checked) => {
+    const newTodoList = todoList.map((todo) =>
+      todo.id === id ? { ...todo, isDone: checked } : todo
+    );
+    setTodoList(newTodoList);
+  };
+
+  const handleCheckAll = (checked) => {
+    const newTodoList = todoList.map((todo) => ({ ...todo, isDone: checked }));
+    setTodoList(newTodoList);
+  };
+  const toggleCheckAll = () => {
+    const newTodoList = todoList.map((todo) => {
+      return { ...todo, isDone: !todo.isDone };
+    });
+    setTodoList(newTodoList);
+  };
   return (
     <Container>
       <Title>일정 관리</Title>
@@ -43,16 +60,26 @@ const TodoList = () => {
           <BtnSubmit>+</BtnSubmit>
         </InputWrapper>
       </form>
+      <div>
+        <button onClick={() => setTodoList([])}>전체삭제</button>
+        <button onClick={() => handleCheckAll(true)}>전체체크</button>
+        <button onClick={() => handleCheckAll(false)}>전체해제</button>
+        <button onClick={toggleCheckAll}>전체반전</button>
+      </div>
       <List>
-        {todoList.map((todo) => (
-          <Item isDone={true} key={todo.id}>
+        {todoList.map(({ id, isDone, text }) => (
+          <Item isDone={isDone} key={id}>
             <label>
-              <Checkbox type="checkbox" />
-              <Content>{todo.text}</Content>
+              <Checkbox
+                type="checkbox"
+                checked={isDone}
+                onChange={(e) => handleChecked(id, e.target.checked)}
+              />
+              <Content>{text}</Content>
             </label>
             <BtnWrapper>
-              <BtnEdit onClick={() => handleEdit(todo.id)}>수정</BtnEdit>
-              <BtnDelete onClick={() => handleDelete(todo.id)}>삭제</BtnDelete>
+              <BtnEdit onClick={() => handleEdit(id)}>수정</BtnEdit>
+              <BtnDelete onClick={() => handleDelete(id)}>삭제</BtnDelete>
             </BtnWrapper>
           </Item>
         ))}
@@ -95,6 +122,7 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
 `;
+const Content = styled.span``;
 const Item = styled.li`
   padding: 15px;
   display: flex;
@@ -103,9 +131,14 @@ const Item = styled.li`
   & + & {
     border-top: 1px solid #ddd;
   }
+  background: ${(props) => props.isDone && "#efefef"};
+
+  ${Content} {
+    text-decoration: ${(props) => props.isDone && "line-through"};
+  }
 `;
 const Checkbox = styled.input``;
-const Content = styled.span``;
+
 const BtnWrapper = styled.div``;
 const BtnEdit = styled.button`
   color: #fff;
