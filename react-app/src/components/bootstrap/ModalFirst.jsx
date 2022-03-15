@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const ModalFirst = ({ onClose, onChange, name }) => {
   const [text, setText] = useState(name);
 
-  // const onChange = (text) => setName(text);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
   const handleSave = () => {
     onChange(text);
     onClose();
