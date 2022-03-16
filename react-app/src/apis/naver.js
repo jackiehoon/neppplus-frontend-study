@@ -27,3 +27,13 @@ export const getBookList = async (params) => {
   const { data } = await instance(config);
   return data;
 };
+
+export const getBookDetail = async (params) => {
+  const config = {
+    url: "/v1/search/book_adv.json",
+    method: "GET",
+    params,
+  };
+  const { data } = await instance(config);
+  return data;
+};

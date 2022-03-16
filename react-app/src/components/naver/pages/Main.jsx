@@ -3,22 +3,25 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <Wrapper>
-      <PageTitle>Search Movie & Book</PageTitle>
-      <SubTitle>
-        by <ImgD2Logo src="http://oss.kr/oss/images/apply/NAVER_D2_logo.png" />
-      </SubTitle>
-      <Link to="/naver/movie">
-        <BtnMovie>
-          <span>MOVIE</span>
-        </BtnMovie>
-      </Link>
-      <Link to="/naver/book">
-        <BtnBook>
-          <span>BOOK</span>
-        </BtnBook>
-      </Link>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <PageTitle>Search Movie & Book</PageTitle>
+        <SubTitle>
+          by{" "}
+          <ImgD2Logo src="http://oss.kr/oss/images/apply/NAVER_D2_logo.png" />
+        </SubTitle>
+        <Link to="/naver/movie">
+          <BtnMovie>
+            <span>MOVIE</span>
+          </BtnMovie>
+        </Link>
+        <Link to="/naver/book">
+          <BtnBook>
+            <span>BOOK</span>
+          </BtnBook>
+        </Link>
+      </Wrapper>
+    </>
   );
 };
 

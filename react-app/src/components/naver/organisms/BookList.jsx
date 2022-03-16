@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const BookList = ({ data }) => {
   return (
     <List>
       {data.map(({ isbn, title, image }) => (
-        <Item key={isbn}>
-          <Thumbnail src={image} />
-          <Title dangerouslySetInnerHTML={{ __html: title }} />
-        </Item>
+        <Link to={`/naver/book/${isbn.split(" ")[1]}`}>
+          <Item key={isbn}>
+            <Thumbnail src={image} />
+            <Title dangerouslySetInnerHTML={{ __html: title }} />
+          </Item>
+        </Link>
       ))}
     </List>
   );
