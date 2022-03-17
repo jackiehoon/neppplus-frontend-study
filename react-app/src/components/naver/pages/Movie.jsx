@@ -32,7 +32,7 @@ const Movie = () => {
   };
 
   const searchMovie = async () => {
-    if (!text) return;
+    if (!query) return;
 
     // const params = { query: text, country, genre };
     // if (country === "ALL") delete params.country;
@@ -40,7 +40,7 @@ const Movie = () => {
     // const page =  10 20  30  40  50;
     // const start = 1 11 21 31 41;
     const start = page * 10 - 9;
-    const params = { query: text, start };
+    const params = { query, start };
     if (country !== "ALL") params.country = country;
     if (genre !== "ALL") params.genre = genre;
 

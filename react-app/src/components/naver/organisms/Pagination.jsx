@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-const Pagination = ({ onPageChange, total, nowPage }) => {
-  // total =    0.1 0.9 1  1.1 2.0 2.1 2.9 3.0 10.0 10.1 10.2
-  // lastPage = 1 1 1      2  2    3  3  3     10  11  11
+const MAX_BUTTON_COUNT = 10;
 
-  const lastPage = Math.ceil(total / 10);
+const Pagination = ({ onPageChange, total, nowPage, display = 10 }) => {
+  // total =    20 21 30 40 41
+  // lastPage = 1  2  2  2  3
 
-  //   const nowPage =   1 1   2 2 2 3 10 11 11
-  //   const startPage = 1 1  11 11 11 21 21 91  101 101
+  const lastPage = Math.ceil(total / display);
+  console.log(nowPage, total);
+  // const nowPage =   1 5 6 10 11
+  // const startPage = 1 1 6 6  11
 
   const startPage = Math.ceil(nowPage / 10) * 10 - 9;
   const endPage = startPage + 9 > lastPage ? lastPage : startPage + 9;
@@ -31,7 +33,7 @@ const Pagination = ({ onPageChange, total, nowPage }) => {
           {page}
         </Page>
       ))}
-      {nowPage < lastPage && (
+      {nowPage < lastPage && nowPage < 100 && (
         <Page onClick={() => onPageChange(nowPage + 1)}>다음</Page>
       )}
     </List>
