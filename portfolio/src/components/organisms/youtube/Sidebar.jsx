@@ -49,6 +49,7 @@ const Container = styled.div`
   position: fixed;
   top: 56px;
   overflow: auto;
+  background: #fff;
 `;
 
 const List = styled.div`

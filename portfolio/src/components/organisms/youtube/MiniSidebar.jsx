@@ -5,8 +5,8 @@ const MiniSidebar = () => {
   return (
     <Container>
       <List>
-        {firstList.map(({ icon, name }) => (
-          <Item>
+        {firstList.map(({ icon, name }, index) => (
+          <Item key={index}>
             <IconWrapper>{icon()}</IconWrapper>
             <Name>{name}</Name>
           </Item>

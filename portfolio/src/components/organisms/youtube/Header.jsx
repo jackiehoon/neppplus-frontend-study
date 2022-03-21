@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as Hamburger } from "../../../assets/images/hamburger.svg";
 import { ReactComponent as YoutubeLogo } from "../../../assets/images/youtube.svg";
-import { ReactComponent as ImgCamera } from "../../../assets/images/camera.svg";
-import { ReactComponent as ImgApps } from "../../../assets/images/youtube-apps.svg";
-import { ReactComponent as ImgBell } from "../../../assets/images/bell.svg";
 import { ReactComponent as ImgSearch } from "../../../assets/images/search.svg";
 import { ReactComponent as ImgMic } from "../../../assets/images/mic.svg";
+import DropdownCamera from "./dropdown/Camera";
+import DropdownApps from "./dropdown/Apps";
+import DropdownAlarm from "./dropdown/Alarm";
 
 const YoutubeHeader = ({ toggleSidebar }) => {
   return (
@@ -14,7 +15,9 @@ const YoutubeHeader = ({ toggleSidebar }) => {
         <span onClick={toggleSidebar}>
           <Hamburger />
         </span>
-        <YoutubeLogo style={{ padding: 15, width: 90 }} />
+        <Link to="/youtube">
+          <YoutubeLogo style={{ padding: 15, width: 90 }} />
+        </Link>
       </Left>
       <Center>
         <SearchInputWrapper>
@@ -29,15 +32,10 @@ const YoutubeHeader = ({ toggleSidebar }) => {
         </BtnMic>
       </Center>
       <Right>
-        <BtnRight>
-          <ImgCamera />
-        </BtnRight>
-        <BtnRight>
-          <ImgApps />
-        </BtnRight>
-        <BtnRight>
-          <ImgBell />
-        </BtnRight>
+        <DropdownCamera />
+        <DropdownApps />
+        <DropdownAlarm />
+
         <BtnProfile>
           <ImgProfile src="https://yt3.ggpht.com/3SshyAt2hdIsA4v1VpRKwmvCSr8Uw0k0HQyERY899L_vAL86hddK3XFOEgEee1rRk0O-Y0qVJw=s88-c-k-c0x00ffffff-no-rj-mo" />
         </BtnProfile>
@@ -103,6 +101,9 @@ const Right = styled.div`
   display: flex;
   align-items: center;
 `;
+const DropdownWrapper = styled.div`
+  position: relative;
+`;
 const BtnRight = styled.button`
   border: none;
   background: none;
@@ -110,6 +111,7 @@ const BtnRight = styled.button`
   height: 40px;
   padding: 8px;
   margin-right: 8px;
+  cursor: pointer;
 `;
 const BtnProfile = styled.button`
   border: none;
