@@ -5,7 +5,7 @@ const useDropdownClickBody = (onClose) => {
 
   useEffect(() => {
     const onClick = (e) => {
-      if (!element.current.contains(e.target)) onClose();
+      if (!element.current?.contains(e.target)) onClose();
     };
     document.body.addEventListener("click", onClick);
 

@@ -13,7 +13,7 @@ const VideoList = ({ data }) => {
             <ChannelImage src={channel.thumbnail} />
             <Info>
               <Link to={`/youtube/${videoId}`}>
-                <VideoTitle>{title}</VideoTitle>{" "}
+                <VideoTitle>{title}</VideoTitle>
               </Link>
               <ChannelName>{channel.name}</ChannelName>
               <MetaData>
